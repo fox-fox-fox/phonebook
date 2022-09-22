@@ -1,0 +1,22 @@
+#contact-list {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+#add-contact {
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mat-paginator {
+    background-color: #F8F7F0 !important;
+    color: #531BBA !important;
+}
+
+.table {
+    color: #531BBA !important;
+}

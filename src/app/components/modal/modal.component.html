@@ -1,0 +1,52 @@
+<section class="modal-form">
+  <div class="my-4" style="text-align: center;">Contact Form</div>
+  <form [formGroup]="formGroup">
+    <div style="display: flex; justify-content: space-between;">
+      <mat-form-field appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput [formControlName]="'firstName'">
+        <mat-error *ngIf="formGroup.get('firstName')!.hasError('required')">
+          Required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput [formControlName]="'lastName'">
+        <mat-error *ngIf="formGroup.get('lastName')!.hasError('required')">
+          Required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControlName]="'email'">
+      <mat-error *ngIf="formGroup.get('email')!.hasError('required')">
+        Required
+      </mat-error>
+      <mat-error *ngIf="formGroup.get('email')!.hasError('email')">
+        Enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Telephone</mat-label>
+      <input matInput [formControlName]="'telephone'">
+      <mat-error *ngIf="formGroup.get('telephone')!.hasError('required')">
+        Required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Wallet</mat-label>
+      <input matInput [formControlName]="'wallet'">
+    </mat-form-field>
+
+  </form>
+
+</section>
+<footer class="modal-footer mt-4">
+
+  <button mat-flat-button color="warn" (click)="clearForm()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="addContact()" *ngIf="!isEditContact">Add</button>
+  <button mat-flat-button color="primary" (click)="editContact()" *ngIf="isEditContact">Edit</button>
+
+</footer>
